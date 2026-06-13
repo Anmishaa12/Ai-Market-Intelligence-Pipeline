@@ -10,7 +10,7 @@ An automated, end-to-end market intelligence pipeline that ingests live AI indus
 
 The pipeline is running in production. To receive a personalized report:
 
-1. Open the form → **[Insert production form URL here]**
+1. Open the form → **https://anmisha.app.n8n.cloud/form/15e16f9e-ee75-4715-a5cf-334dc40cfeb4**
 2. Select your sector and enter your email
 3. Receive 7 AI intelligence signals in your inbox within ~60 seconds
 
@@ -18,7 +18,7 @@ The pipeline is running in production. To receive a personalized report:
 
 ## Architecture
 
-![Pipeline Architecture](n8n-pipeline-architecture.png)
+![Pipeline Architecture](pipeline-architecture.png)
 
 
 **Execution paths:**
@@ -67,13 +67,38 @@ A single If node checks which trigger started the run (`$('On form submission').
 
 > *The following signals were generated from real Tavily search results for the Media & Entertainment sector. Every named entity traces to a source article.*
 
-**1. SECTOR SIGNAL:** AI developments directly affecting Media & Entertainment include Warner Music Group's acquisition of AI detection company Sureel to identify when artists' works appear in AI-generated tracks, and Hasbro's launch of an AI studio allowing companies to license its characters. Box is using AI to index film assets more accurately.
+1. **SECTOR SIGNAL**: The Media & Entertainment industry is being directly affected by AI developments, such as generative AI, which can create high-quality content faster and at lower costs. Companies like OpenAI are at the forefront of this development, with products like ChatGPT.
 
-**2. INVESTMENT SIGNAL:** AI funding is flowing into content-adjacent companies — Suno, an AI music generator, revealed a $400 million funding round at a $5.4 billion valuation. Professionals should watch acquisitions in AI rights detection and licensing.
+2. **INVESTMENT SIGNAL**: AI investment in Media & Entertainment is expected to have a significant impact, with generative AI likely to be adopted by both scaled incumbents and new entrants. However, specific deals, acquisitions, or funding rounds are not mentioned in the data.
 
-*(...5 more signals in the actual report)*
+3. **ADOPTION SIGNAL**: Professionals in Media & Entertainment can use AI developments to improve their work and productivity by leveraging generative AI for content creation, curation, and personalization. For example, AI can be used to produce high-quality content faster and at lower costs.
 
----
+4. **FUTURE SIGNAL**: In the next 6-12 months, the Media & Entertainment sector can expect AI changes such as the increased use of generative AI in production and distribution, as well as a focus on AI-assisted solutions for audiences. Businesses should prepare by exploring the potential of generative AI and its applications in their industry.
+
+5. **EVOLUTION SIGNAL**: To stay competitive, businesses and professionals in Media & Entertainment should evolve their strategy by embracing generative AI and exploring its potential applications. They should also focus on developing bespoke AI-assisted solutions for their audiences and consider content deals with AI platforms.
+
+6. **LEADERSHIP SIGNAL**: Industry leaders and experts, such as Benjamin Swinburne from Morgan Stanley and Ezra Eeman, Strategy and Innovation Director at NPO, believe that generative AI will have a significant impact on the Media & Entertainment industry, both as an opportunity and a risk. They emphasize the need for companies to adapt to the changing landscape and explore the potential of generative AI.
+
+7. **TOOLS & TIPS SIGNAL**: Media & Entertainment professionals should be aware of AI tools like ChatGPT and other generative AI platforms that can be used for content creation, curation, and personalization. They should also consider attending events like The AI Summit to connect with AI leaders and innovators and stay up-to-date on the latest developments in the field.
+
+
+> *The following signals were generated from real Tavily search results for the Finance sector. Every named entity traces to a source article.*
+
+1. **SECTOR SIGNAL**: AI developments are directly affecting the Finance industry today, with advancements in Generative AI and large language models expanding the range of possible applications, including customer interaction, internal analysis, and supervisory processes. Companies such as J.P.Morgan and Bank of America are leveraging AI to improve efficiency and reduce fraud.
+
+2. **INVESTMENT SIGNAL**: AI investment and funding are flowing into the Finance sector, with a focus on developing and implementing AI solutions to improve operations, risk management, and customer experience. The U.S. Department of the Treasury has released a report on the uses, opportunities, and risks of AI in financial services, highlighting the need for continued stakeholder engagement to foster innovation while mitigating potential risks.
+
+3. **ADOPTION SIGNAL**: Professionals in Finance can use AI developments to improve their work and productivity by leveraging AI to analyze customer behavioral patterns, perform customer segmentation, and detect fraud. AI can also be used to automate back-office functions, support credit underwriting, and manage risks.
+
+4. **FUTURE SIGNAL**: Based on the data, AI changes are coming to the Finance sector in the next 6-12 months, with a focus on the strategic deployment of Generative AI to reimagine operations, product development, and risk management. Businesses should prepare by investing in AI solutions, developing governance frameworks, and ensuring accountability, risk management, and oversight.
+
+5. **EVOLUTION SIGNAL**: Businesses and professionals in Finance should evolve their strategy to stay competitive by incorporating AI into their operations, leveraging data to improve customer experience, and developing new operating models. They should also focus on building partnerships and ecosystems, accommodating cross-border compliance, and ensuring multimarket adaptability.
+
+6. **LEADERSHIP SIGNAL**: Industry leaders and experts, such as Under Secretary for Domestic Finance Nellie Liang and Andrew W. Lo, a professor of finance at the MIT Sloan School of Management, are emphasizing the importance of understanding the impact of AI on the financial sector. They highlight the need for continued stakeholder engagement, governance frameworks, and risk management to mitigate potential risks and foster innovation.
+
+7. **TOOLS & TIPS SIGNAL**: Finance professionals should be aware of AI tools such as large language models and Generative AI, which can be used to improve efficiency, reduce fraud, and enhance customer experience. They should also focus on developing skills to work with AI, understanding data governance, and ensuring accountability and oversight in AI operations.
+
+
 
 ## Limitations & Roadmap
 
@@ -83,8 +108,12 @@ A single If node checks which trigger started the run (`$('On form submission').
 
 **News freshness** — sector-specific queries sometimes return evergreen explainer articles rather than dated news. Tuning Tavily's search parameters toward news mode and recency filters is a known lever for sharper results.
 
----
+**Email delivery at scale** — Gmail has a 500 email per day sending limit. At scale, the Gmail node would be replaced with AWS SES — available as a native n8n node — which handles millions of emails at ~$0.10 per 1,000. The pipeline architecture stays identical; only the delivery infrastructure 
+changes.
 
+**AI Tools Guide signal** — A planned 8th signal category would curate 2-3 specific AI tools from the news data each run, explaining what each tool does, who it is for, and how professionals in the subscriber's sector can use it immediately. This makes the report useful for anyone beginning their AI journey, not just professionals already familiar with the space.
+
+----
 ## How to Run
 
 ### Prerequisites
