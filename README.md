@@ -13,7 +13,6 @@ The pipeline is running in production. To receive a personalized report:
 1. Open the form → **https://anmisha.app.n8n.cloud/form/15e16f9e-ee75-4715-a5cf-334dc40cfeb4**
 2. Select your sector and enter your email
 3. Receive 7 AI intelligence signals in your inbox within ~60 seconds
-
 ---
 
 ## Architecture
