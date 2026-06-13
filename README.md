@@ -1,6 +1,6 @@
 # AI Market Intelligence Pipeline
 
-> Built by **Anmisha Mandalapu** | anmishamandalapu@gmail.com
+> Built by **Anmisha Mandalapu** | anmishamandalapu@gmail.com  | Linkedin: www.linkedin.com/in/anmisha-mandalapu
 
 An automated, end-to-end market intelligence pipeline that ingests live AI industry news, analyzes it with a large language model, and delivers 7 structured intelligence signals by email — personalized to a subscriber's chosen sector, on demand or on a 48-hour schedule.
 
