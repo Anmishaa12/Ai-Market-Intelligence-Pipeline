@@ -18,7 +18,7 @@ The pipeline is running in production. To receive a personalized report:
 
 ## Architecture
 
-
+![Pipeline Architecture](n8n-pipeline-architecture.png)
 
 
 **Execution paths:**
