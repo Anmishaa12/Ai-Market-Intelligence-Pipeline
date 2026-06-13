@@ -65,6 +65,9 @@ A single If node checks which trigger started the run (`$('On form submission').
 
 ## Sample Output
 
+
+**Note on signal quality**: Signal specificity varies by sector and date depending on what Tavily finds on that day. When breaking news exists, signals are highly specific with named companies and figures. When less breaking news exists, grounding rules prevent fabrication and signals describe general trends instead. Accuracy is always prioritized over specificity.
+
 > *The following signals were generated from real Tavily search results for the Media & Entertainment sector. Every named entity traces to a source article.*
 
 1. **SECTOR SIGNAL**: The Media & Entertainment industry is being directly affected by AI developments, such as generative AI, which can create high-quality content faster and at lower costs. Companies like OpenAI are at the forefront of this development, with products like ChatGPT.
@@ -105,6 +108,9 @@ A single If node checks which trigger started the run (`$('On form submission').
 **Per-sector scheduled delivery** — subscribers select a sector at signup and it is stored, but scheduled broadcasts currently use general AI news for everyone. The designed next step is looping the scheduled run per sector: one search, one analysis, one targeted email per sector group.
 
 **Historical trend analysis** — Supabase is currently write-only by design: every article is stored with deduplication enforced, but no node reads the history back yet. The next step is a read node pulling the last week of signals into the prompt so each report can include trend context ("investment mentions up 40% since last week").
+
+**Relevance score filtering** — Tavily returns a relevance score per article (0 to 1). Currently all articles pass to Groq regardless of score. A filter node after Edit Fields would drop low-scoring articles below a threshold (e.g. 0.7), ensuring only the most relevant content reaches the AI 
+analysis layer.
 
 **News freshness** — sector-specific queries sometimes return evergreen explainer articles rather than dated news. Tuning Tavily's search parameters toward news mode and recency filters is a known lever for sharper results.
 
